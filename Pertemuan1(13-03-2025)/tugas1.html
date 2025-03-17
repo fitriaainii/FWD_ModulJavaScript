@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1 - Modul JavaScript</title>
+</head>
+<body>
+    <h1>Menghitung Luas Persegi Panjang, Bujur Sangkar, dan Segitiga</h1>
+    <script>
+        // Menghitung Luas Persegi Panjang
+        function LuasPersegiPanjang(lebar, panjang) {
+            return lebar * panjang;
+        }
+
+        // Menghitung Luas Bujur Sangkar
+        function LuasBujurSangkar(sisi) {
+            return sisi * sisi;
+        }
+
+        // Menghitung Luas Segitiga
+        function LuasSegitiga(alas, tinggi) {
+            return (alas * tinggi) / 2;
+        }
+
+        // Nilai Parameter
+        // Nilai Parameter Persegi Panjang
+        let lebar = 10, panjang = 30;
+
+        // Nilai Parameter Bujur Sangkar
+        let sisi = 20;
+
+        // Nilai Parameter Segitiga
+        let alas = 15, tinggi = 8;
+
+        // Menampilkan Hasil Perhitungan
+        // Menampilkan Hasil Perhitungan Lusa Persegi Panjang
+        document.write(`Luas Persegi Panjang dengan lebar ${lebar} dan panjang ${panjang} adalah ${LuasPersegiPanjang(lebar, panjang)} <br> <br>`);
+
+        // Menampilkan Hasil Perhitungan Luas Bujur Sangkar
+        document.write(`Luas Bujur Sangkar dengan sisi ${sisi} adalah ${LuasBujurSangkar(sisi)} <br> <br>`);
+
+        // Menampilkan Hasil Perhitungan Luas Segitiga
+        document.write(`Luas Segitiga dengan alas ${alas} dan tinggi ${tinggi} adalah ${LuasSegitiga(alas, tinggi)} <br> <br>`);
+    </script>
+
+</body>
+</html>
