@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 3 - Mengelola DOM Attribut</title>
+</head>
+
+<style>
+    #container{
+        width: 300px;
+        height: 300px;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #ccc;
+        margin-bottom: 15px;
+    }
+    #img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .background-color{
+        background-color: #0f8bff;
+    }
+</style>
+
+
+<body>
+    <div id="container" class="background-color">
+        <img id="img" src="img/img 1.jpg" alt="gambar 1" style="display: none;">
+    </div>
+    <button onclick="tambahGambar()">Tambah Gambar</button>
+
+
+    <script>
+    let container = document.getElementById("container");
+    let img = document.getElementById("img");
+    let clickCount = 0;
+
+    function tambahGambar() {
+        clickCount++;
+        if (clickCount === 1) {
+            container.classList.remove("background-color");
+            img.style.display = "block";
+        } else {
+            let img-container = document.getElementById("img-container");
+            if (!img-container) {
+                img-container = document.createElement("div");
+                img-container.id = "img-container";
+                document.body.appendChild(img-container);
+            }
+            let newImg = document.createElement("img");
+            newImg.src = "img/img 2.jpg";
+            newImg.alt = "Gambar Tambahan";
+            img-container.appendChild(newImg);
+
+        }
+    }
+    </script>
+</body>
+</html>

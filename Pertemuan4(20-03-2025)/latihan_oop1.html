@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan OOP 1</title>
+</head>
+<body>
+    <script>
+        function Person(name, age) {
+            // deklarasi constructor ditandai dengan this
+            this.name = name;
+            this.age = age;
+        }
+
+        // dan dipanggil didalam object dengan keyword new
+        let person1 = new Person("John", 30);
+        let person2 = new Person("Jane", 25);
+        console.log(person1); // Output: John
+        console.log(person2); // Output: Jane
+    </script>
+</body>
+</html>

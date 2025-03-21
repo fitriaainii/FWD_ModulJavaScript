@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Manajemen Transportasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        input, button {
+            margin: 5px;
+            padding: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Sistem Manajemen Transportasi</h2>
+
+    <label for="nama">Nama Pelanggan:</label>
+    <input type="text" id="nama"><br>
+
+    <label for="nomorTelepon">Nomor Telepon:</label>
+    <input type="text" id="nomorTelepon"><br>
+
+    <label for="kendaraanDisewa">Kendaraan Disewa:</label>
+    <input type="text" id="kendaraanDisewa"><br>
+
+    <button onclick="tambahPelanggan()">Sewa Kendaraan</button>
+
+    <h3>Daftar Pelanggan yang Menyewa Kendaraan:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Nomor Telepon</th>
+                <th>Kendaraan Disewa</th>
+            </tr>
+        </thead>
+        <tbody id="daftarPelanggan">
+            <!-- Data pelanggan akan ditambahkan di sini -->
+        </tbody>
+    </table>
+
+    <script>
+        // Class Pelanggan
+        class Pelanggan {
+            constructor(nama, nomorTelepon, kendaraanDisewa) {
+                this.nama = nama;
+                this.nomorTelepon = nomorTelepon;
+                this.kendaraanDisewa = kendaraanDisewa;
+            }
+        }
+
+        // Array untuk menyimpan daftar pelanggan
+        let daftarPelanggan = [];
+
+        function tambahPelanggan() {
+            // Ambil nilai input dari user
+            let nama = document.getElementById("nama").value;
+            let nomorTelepon = document.getElementById("nomorTelepon").value;
+            let kendaraanDisewa = document.getElementById("kendaraanDisewa").value;
+
+            // Validasi input
+            if (nama === "" || nomorTelepon === "" || kendaraanDisewa === "") {
+                alert("Harap isi semua data!");
+                return;
+            }
+
+            // Buat objek pelanggan baru
+            let pelangganBaru = new Pelanggan(nama, nomorTelepon, kendaraanDisewa);
+
+            // Tambahkan ke daftar pelanggan
+            daftarPelanggan.push(pelangganBaru);
+
+            // Tampilkan daftar pelanggan di tabel
+            updateTabel();
+
+            // Kosongkan input setelah ditambahkan
+            document.getElementById("nama").value = "";
+            document.getElementById("nomorTelepon").value = "";
+            document.getElementById("kendaraanDisewa").value = "";
+        }
+
+        function updateTabel() {
+            let tbody = document.getElementById("daftarPelanggan");
+            tbody.innerHTML = ""; // Kosongkan tabel sebelum diperbarui
+
+            daftarPelanggan.forEach((pelanggan) => {
+                let row = `<tr>
+                    <td>${pelanggan.nama}</td>
+                    <td>${pelanggan.nomorTelepon}</td>
+                    <td>${pelanggan.kendaraanDisewa}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        }
+    </script>
+
+</body>
+</html>

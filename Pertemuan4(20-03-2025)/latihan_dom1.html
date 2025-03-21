@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 1</title>
+</head>
+<body>
+    <!-- Ubah Teks -->
+    <h1 id="judul">Selamat Datang</h1>
+    <button onclick="ubahTeks()">Ubah Teks</button>
+
+    <!-- Ubah Gaya -->
+    <p id="paragraph">Ini adalah paragraf warna hitam</p>
+    <button onclick="ubahGaya()">Ubah Gaya</button>
+
+    <!-- Menambahkan Elemen Baru -->
+    <div id="container">
+        <p id="paragraph">Ini adalah paragraf warna hitam</p>
+    </div>
+    <button onclick="tambahElemen()">Tambah Paragraph</button>
+    <button onclick="hapusElemen()">Hapus Paragraph</button>
+    
+
+
+    <script>
+        // Fungsi untuk mengubah teks elemen
+        function ubahTeks() {
+            document.getElementById("judul").innerText = 'Teks Selamat Datang Diubah menjadi Selamat Pagi';
+        }
+
+        // Fungsi untuk mengubah gaya elemen
+        function ubahGaya() {
+            document.getElementById("paragraph").style.color = "red"; 
+            document.getElementById("paragraph").style.fontSize = "20px";
+            document.getElementById("paragraph").style.fontWeight = "bold";
+            document.getElementById("paragraph").style.fontFamily = "Arial, sans-serif";
+            document.getElementById("paragraph").style.backgroundColor = "yellow";
+        }
+
+        // Fungsi untuk menambahkan elemen baru
+        function tambahElemen() {
+        let paragraphBaru = document.createElement("p");
+        paragraphBaru.innerText = "Ini adalah paragraf baru yang ditambahkan.";
+        document.getElementById("container").appendChild(paragraphBaru);
+        }
+
+        // Fungsi untuk menghapus elemen
+        function hapusElemen() {
+            let container = document.getElementById("container");
+            let paragraph = document.getElementById("paragraph");
+            if (container.chcontains(paragraph)) {
+                container.removeChild(paragraph);
+            } else {
+                alert("Paragrafp tidak ditemukan di dalam container.");
+            }
+        }
+    </script>
+</body>
+</html>
