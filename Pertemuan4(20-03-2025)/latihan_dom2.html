@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 2</title>
+</head>
+<body>
+    <img src="img/img 1.jpg" alt="img 1" id="img" width="100px">
+    <br>
+    <button onclick="ubahGambar()">Ubah Gambar</button>
+    <button onclick="document.getElementById('img').setAttribute('src', 'img/img 1.jpg')">Kembali</button>
+
+    
+    <script>
+    function ubahGambar() {
+        document.getElementById("img").setAttribute("src", "img/img 2.jpg");
+        document.getElementById("img").setAttribute("alt", "Gambar baru");
+    }
+    </script>
+    
+</body>
+</html>
